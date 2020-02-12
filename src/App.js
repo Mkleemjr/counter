@@ -4,7 +4,7 @@ class Counter extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
+      count: 0
     }
   }
 
@@ -21,6 +21,12 @@ class Counter extends Component {
     })
   }
 
+  reset = () => {
+    this.setState ({
+      count: this.state.count = 0
+    })
+  }
+
   render() {
     return(
       <div className="container">
@@ -29,6 +35,7 @@ class Counter extends Component {
             <h1>{this.state.count}</h1>
             <button type="button" onClick={this.increment}>Increment</button>
             <button type="button" onClick={this.decrement}>Decrement</button>
+            <button type="button" onClick={this.reset}>Reset</button>
           </div>
         </div>
     )
