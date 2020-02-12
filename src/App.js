@@ -5,8 +5,8 @@ class Counter extends Component {
     super();
     this.state = {
       count: 0,
-      increment: 'Double Increments',
-      decrement: 'Double Decrements'
+      increment: 'Single Increments',
+      decrement: 'Single Decrements'
     }
   }
 
@@ -86,25 +86,25 @@ class Counter extends Component {
   }
 
   toggleInc = () => {
-    if (this.state.increment === 'Double Increments') {
-      this.setState({
-        counter: this.incrementByTwo()
-      })
-    } else if (this.state.increment === 'Single Increments') {
+    if (this.state.increment === 'Single Increments') {
       this.setState({
         counter: this.increment()
+      })
+    } else if (this.state.increment === 'Double Increments') {
+      this.setState({
+        counter: this.incrementByTwo()
       })
     }
   }
 
   toggleDec = () => {
-    if (this.state.decrement === 'Double Decrements') {
+    if (this.state.decrement === 'Single Decrements') {
       this.setState({
-        counter: this.decrementByTwo() 
+        counter: this.decrement() 
       })
-    } else if (this.state.decrement === 'Single Decrements') {
+    } else if (this.state.decrement === 'Double Decrements') {
       this.setState({
-        counter: this.decrement()
+        counter: this.decrementByTwo()
       })
     }
   }
